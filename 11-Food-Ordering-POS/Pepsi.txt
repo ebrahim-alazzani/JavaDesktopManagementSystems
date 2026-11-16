@@ -1,0 +1,14 @@
+producet Id :  18
+ Product name :  Pepsi
+
+  Product price :  22
+
+  Product category_id :  Pizza
+
+ Product Name  :  1
+
+ Product description  :  
+
+ Product quantity  :  7
+
+

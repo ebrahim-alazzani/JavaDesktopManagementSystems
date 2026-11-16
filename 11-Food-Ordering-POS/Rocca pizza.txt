@@ -1,0 +1,14 @@
+producet Id :  10
+ Product name :  Rocca pizza
+
+  Product price :  25
+
+  Product category_id :  Pizza
+
+ Product Name  :  1
+
+ Product description  :  fresh rocca leaves pizza
+
+ Product quantity  :  7
+
+

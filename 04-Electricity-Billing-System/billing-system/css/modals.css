@@ -1,0 +1,125 @@
+/* ===================================
+   Modal Styles
+   =================================== */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow: hidden;
+    animation: slideUp 0.3s ease;
+}
+
+.modal-lg {
+    max-width: 700px;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-header h3 {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modal-header h3 i {
+    color: var(--primary);
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+.close-btn:hover {
+    background: var(--bg-hover);
+    color: var(--danger);
+}
+
+.modal-body {
+    padding: 20px;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.modal-footer {
+    padding: 20px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* Toast Notification */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background: var(--success);
+    color: white;
+    padding: 16px 24px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: var(--shadow-lg);
+    transform: translateY(100px);
+    opacity: 0;
+    transition: var(--transition);
+    z-index: 3000;
+}
+
+.toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.toast.error {
+    background: var(--danger);
+}

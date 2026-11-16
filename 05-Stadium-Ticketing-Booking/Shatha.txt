@@ -1,0 +1,17 @@
+Reservation Id :  56
+ room Number :  33
+
+  Employee ID :  113333
+
+ User Name  :  shatha12
+
+ Frist Name  :  Shatha
+
+ Last Name  :  Alsharyofi
+ number of nights  :  88
+
+ check in date  :  dd‏/MM‏/y HH:mm:ss
+
+ check Out date  :  dd‏/MM‏/y HH:mm:ss
+
+ reservation date  :  dd‏/MM‏/y

@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام إدارة فواتير المشتركين</title>
+    <meta name="description" content="نظام إدارة فواتير المشتركين - تطوير سايبر برو للأعمال التقنية والهندسية">
+    <meta name="author" content="CyberPro Team">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- SheetJS for Excel Export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+    <!-- CSS Modules -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/billing.css">
+    <link rel="stylesheet" href="css/modals.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobile-menu-btn" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar Overlay for Mobile -->
+    <div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <img src="logo.png" alt="Logo" style="width: 40px; height: 40px;">
+                <span>نظام الفواتير</span>
+            </div>
+            <button class="toggle-btn" onclick="toggleSidebar()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <ul class="nav-menu">
+            <li class="nav-item active" onclick="showPage('dashboard')">
+                <i class="fas fa-home"></i>
+                <span>لوحة التحكم</span>
+            </li>
+            <li class="nav-item" onclick="showPage('subscribers')">
+                <i class="fas fa-users"></i>
+                <span>المشتركين</span>
+            </li>
+            <li class="nav-item" onclick="showPage('billing')">
+                <i class="fas fa-file-invoice-dollar"></i>
+                <span>إنشاء فاتورة</span>
+            </li>
+            <li class="nav-item" onclick="showPage('archive')">
+                <i class="fas fa-archive"></i>
+                <span>الأرشيف</span>
+            </li>
+            <li class="nav-item" onclick="showPage('reports')">
+                <i class="fas fa-chart-bar"></i>
+                <span>التقارير</span>
+            </li>
+            <li class="nav-item" onclick="showPage('settings')">
+                <i class="fas fa-cog"></i>
+                <span>الإعدادات</span>
+            </li>
+            <li class="nav-item" onclick="showPage('about')">
+                <i class="fas fa-info-circle"></i>
+                <span>حول النظام</span>
+            </li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="user-details">
+                    <span class="user-name" id="user-display-name">المدير</span>
+                    <span class="user-role" id="user-display-role">مسؤول النظام</span>
+                </div>
+            </div>
+            <button class="btn btn-sm btn-secondary" onclick="logout()" style="margin-top: 10px; width: 100%;">
+                <i class="fas fa-sign-out-alt"></i> تسجيل الخروج
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content" id="main-content">
+        <!-- Top Bar -->
+        <header class="top-bar">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="بحث...">
+            </div>
+            <div class="top-bar-actions">
+                <button class="notification-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </button>
+                <div class="date-display">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span id="current-date"></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Page -->
+        <section class="page active" id="page-dashboard">
+            <div class="page-header">
+                <h1><i class="fas fa-home"></i> لوحة التحكم</h1>
+                <p>نظرة عامة على النظام</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card gradient-blue">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <div class="stat-info">
+                        <h3 id="total-subscribers">0</h3>
+                        <p>إجمالي المشتركين</p>
+                    </div>
+                </div>
+                <div class="stat-card gradient-green">
+                    <div class="stat-icon"><i class="fas fa-file-invoice"></i></div>
+                    <div class="stat-info">
+                        <h3 id="total-invoices">0</h3>
+                        <p>إجمالي الفواتير</p>
+                    </div>
+                </div>
+                <div class="stat-card gradient-orange">
+                    <div class="stat-icon"><i class="fas fa-money-bill-wave"></i></div>
+                    <div class="stat-info">
+                        <h3 id="total-revenue">0</h3>
+                        <p>إجمالي الإيرادات</p>
+                    </div>
+                </div>
+                <div class="stat-card gradient-red">
+                    <div class="stat-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                    <div class="stat-info">
+                        <h3 id="total-debts">0</h3>
+                        <p>إجمالي المديونيات</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-history"></i> آخر الفواتير</h3>
+                        <button class="btn-icon" onclick="showPage('archive')"><i
+                                class="fas fa-arrow-left"></i></button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="data-table" id="recent-invoices-table">
+                                <thead>
+                                    <tr>
+                                        <th>التاريخ</th>
+                                        <th>المشترك</th>
+                                        <th>المبلغ</th>
+                                        <th>الحالة</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-user-clock"></i> مشتركين بمديونيات</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="debt-list" id="debt-list"></ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subscribers Page -->
+        <section class="page" id="page-subscribers">
+            <div class="page-header">
+                <h1><i class="fas fa-users"></i> إدارة المشتركين</h1>
+                <div class="header-actions">
+                    <button class="btn btn-secondary" onclick="exportSubscribersToExcel()">
+                        <i class="fas fa-file-excel"></i> تصدير Excel
+                    </button>
+                    <button class="btn btn-primary" onclick="openModal('add-subscriber-modal')">
+                        <i class="fas fa-plus"></i> إضافة مشترك
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="filter-group">
+                        <input type="text" id="search-subscribers" placeholder="بحث بالاسم أو رقم العداد أو الهاتف..."
+                            oninput="filterSubscribers()">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="data-table" id="subscribers-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>الاسم</th>
+                                    <th>رقم العداد</th>
+                                    <th>الهاتف</th>
+                                    <th>الرصيد الحالي</th>
+                                    <th>آخر قراءة</th>
+                                    <th>الإجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody id="subscribers-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Billing Page -->
+        <section class="page" id="page-billing">
+            <div class="page-header">
+                <h1><i class="fas fa-file-invoice-dollar"></i> إنشاء فاتورة جديدة</h1>
+            </div>
+
+            <div class="billing-container">
+                <div class="card billing-form-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-edit"></i> بيانات الفاتورة</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="billing-form">
+                            <div class="form-group">
+                                <label><i class="fas fa-user"></i> اختر المشترك</label>
+                                <select id="billing-subscriber" onchange="loadSubscriberData()">
+                                    <option value="">-- اختر المشترك --</option>
+                                </select>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label><i class="fas fa-tachometer-alt"></i> القراءة السابقة</label>
+                                    <input type="number" id="billing-prev-reading" readonly class="readonly-input">
+                                </div>
+                                <div class="form-group">
+                                    <label><i class="fas fa-coins"></i> الديون السابقة</label>
+                                    <input type="number" id="billing-prev-debt" readonly class="readonly-input">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label><i class="fas fa-tachometer-alt"></i> القراءة الحالية</label>
+                                    <input type="number" id="billing-curr-reading" oninput="calculateBill()"
+                                        placeholder="أدخل القراءة الحالية">
+                                </div>
+                                <div class="form-group">
+                                    <label><i class="fas fa-tag"></i> سعر الكيلو واط</label>
+                                    <input type="number" id="billing-price" oninput="calculateBill()" value="0.5"
+                                        step="0.01">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label><i class="fas fa-money-bill"></i> المبلغ المدفوع</label>
+                                <input type="number" id="billing-paid" oninput="calculateBill()"
+                                    placeholder="أدخل المبلغ المدفوع">
+                            </div>
+
+                            <button type="button" class="btn btn-primary btn-block" onclick="saveBill()">
+                                <i class="fas fa-save"></i> حفظ وإنشاء الفاتورة
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card billing-preview-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-calculator"></i> ملخص الفاتورة</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="invoice-preview">
+                            <div class="preview-header">
+                                <i class="fas fa-bolt"></i>
+                                <h2>فاتورة استهلاك الكهرباء</h2>
+                            </div>
+
+                            <div class="preview-row">
+                                <span>المشترك:</span>
+                                <strong id="preview-name">-</strong>
+                            </div>
+                            <div class="preview-row">
+                                <span>الاستهلاك:</span>
+                                <strong id="preview-consumption">0 كيلو واط</strong>
+                            </div>
+                            <div class="preview-row">
+                                <span>قيمة الاستهلاك:</span>
+                                <strong id="preview-bill">0</strong>
+                            </div>
+                            <div class="preview-row">
+                                <span>الديون السابقة:</span>
+                                <strong id="preview-old-debt">0</strong>
+                            </div>
+                            <hr>
+                            <div class="preview-row total">
+                                <span>الإجمالي:</span>
+                                <strong id="preview-total">0</strong>
+                            </div>
+                            <div class="preview-row paid">
+                                <span>المدفوع:</span>
+                                <strong id="preview-paid">0</strong>
+                            </div>
+                            <div class="preview-row remaining">
+                                <span>المتبقي:</span>
+                                <strong id="preview-remaining" class="highlight">0</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Archive Page -->
+        <section class="page" id="page-archive">
+            <div class="page-header">
+                <h1><i class="fas fa-archive"></i> أرشيف الفواتير</h1>
+                <div class="header-actions">
+                    <button class="btn btn-secondary" onclick="exportToExcel()">
+                        <i class="fas fa-file-excel"></i> تصدير Excel
+                    </button>
+                    <button class="btn btn-secondary" onclick="printArchive()">
+                        <i class="fas fa-print"></i> طباعة
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="filter-group">
+                        <input type="text" id="search-archive" placeholder="بحث..." oninput="filterArchive()">
+                        <input type="date" id="filter-date-from" onchange="filterArchive()">
+                        <input type="date" id="filter-date-to" onchange="filterArchive()">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="data-table" id="archive-table">
+                            <thead>
+                                <tr>
+                                    <th>التاريخ</th>
+                                    <th>المشترك</th>
+                                    <th>قراءة سابقة</th>
+                                    <th>قراءة حالية</th>
+                                    <th>الاستهلاك</th>
+                                    <th>المبلغ</th>
+                                    <th>المدفوع</th>
+                                    <th>المتبقي</th>
+                                    <th>الإجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody id="archive-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reports Page -->
+        <section class="page" id="page-reports">
+            <div class="page-header">
+                <h1><i class="fas fa-chart-bar"></i> التقارير</h1>
+            </div>
+
+            <div class="reports-grid">
+                <div class="card report-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-calendar-alt"></i> التقرير الشهري</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="report-summary">
+                            <div class="report-stat">
+                                <span>عدد الفواتير:</span>
+                                <strong id="report-monthly-invoices">0</strong>
+                            </div>
+                            <div class="report-stat">
+                                <span>إجمالي الإيرادات:</span>
+                                <strong id="report-monthly-revenue">0</strong>
+                            </div>
+                            <div class="report-stat">
+                                <span>إجمالي المحصل:</span>
+                                <strong id="report-monthly-collected">0</strong>
+                            </div>
+                            <div class="report-stat">
+                                <span>إجمالي المتبقي:</span>
+                                <strong id="report-monthly-remaining">0</strong>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-block" onclick="generateMonthlyReport()">
+                            <i class="fas fa-file-pdf"></i> إنشاء التقرير
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card report-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-user-clock"></i> تقرير المديونيات</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="report-summary">
+                            <div class="report-stat">
+                                <span>عدد المدينين:</span>
+                                <strong id="report-debtors-count">0</strong>
+                            </div>
+                            <div class="report-stat">
+                                <span>إجمالي المديونيات:</span>
+                                <strong id="report-total-debt" class="text-danger">0</strong>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-block" onclick="generateDebtReport()">
+                            <i class="fas fa-file-pdf"></i> إنشاء التقرير
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card report-card full-width">
+                    <div class="card-header">
+                        <h3><i class="fas fa-chart-line"></i> تقرير المشترك</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label>اختر المشترك</label>
+                            <select id="report-subscriber">
+                                <option value="">-- اختر المشترك --</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary" onclick="generateSubscriberReport()">
+                            <i class="fas fa-file-pdf"></i> إنشاء تقرير المشترك
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Settings Page -->
+        <section class="page" id="page-settings">
+            <div class="page-header">
+                <h1><i class="fas fa-cog"></i> الإعدادات</h1>
+            </div>
+
+            <div class="settings-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-tag"></i> إعدادات الأسعار</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label>سعر الكيلو واط الافتراضي</label>
+                            <input type="number" id="default-price" step="0.01" value="0.5">
+                        </div>
+                        <button class="btn btn-primary" onclick="saveSettings()">
+                            <i class="fas fa-save"></i> حفظ
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-database"></i> إدارة البيانات</h3>
+                    </div>
+                    <div class="card-body">
+                        <button class="btn btn-secondary btn-block" onclick="exportAllData()">
+                            <i class="fas fa-download"></i> تصدير جميع البيانات
+                        </button>
+                        <button class="btn btn-secondary btn-block"
+                            onclick="document.getElementById('import-file').click()">
+                            <i class="fas fa-upload"></i> استيراد البيانات
+                        </button>
+                        <input type="file" id="import-file" hidden accept=".json" onchange="importData(event)">
+                        <button class="btn btn-danger btn-block" onclick="confirmClearData()">
+                            <i class="fas fa-trash"></i> مسح جميع البيانات
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-building"></i> معلومات الجهة</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label>اسم الجهة</label>
+                            <input type="text" id="org-name" placeholder="مثال: شركة الكهرباء">
+                        </div>
+                        <div class="form-group">
+                            <label>العنوان</label>
+                            <input type="text" id="org-address" placeholder="العنوان">
+                        </div>
+                        <div class="form-group">
+                            <label>رقم الهاتف</label>
+                            <input type="text" id="org-phone" placeholder="رقم الهاتف">
+                        </div>
+                        <button class="btn btn-primary" onclick="saveOrgSettings()">
+                            <i class="fas fa-save"></i> حفظ
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-user-shield"></i> إدارة المستخدمين</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label>كلمة المرور الحالية</label>
+                            <input type="password" id="current-password" placeholder="كلمة المرور الحالية">
+                        </div>
+                        <div class="form-group">
+                            <label>كلمة المرور الجديدة</label>
+                            <input type="password" id="new-password" placeholder="كلمة المرور الجديدة">
+                        </div>
+                        <div class="form-group">
+                            <label>تأكيد كلمة المرور</label>
+                            <input type="password" id="confirm-password" placeholder="تأكيد كلمة المرور">
+                        </div>
+                        <button class="btn btn-primary" onclick="changePassword()">
+                            <i class="fas fa-key"></i> تغيير كلمة المرور
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section class="page" id="page-about">
+            <div class="page-header">
+                <h1><i class="fas fa-info-circle"></i> حول النظام</h1>
+            </div>
+
+            <div class="about-container">
+                <div class="card about-card">
+                    <div class="about-logo">
+                        <img src="logo.png" alt="Logo" style="width: 120px; height: 120px; margin-bottom: 20px;">
+                        <h2>نظام إدارة فواتير المشتركين</h2>
+                        <p class="version">الإصدار 1.0.0</p>
+                    </div>
+
+                    <div class="about-description">
+                        <p>نظام متكامل لإدارة فواتير اشتراكات الكهرباء والماء والخدمات الأخرى. يوفر النظام أدوات شاملة
+                            لإدارة المشتركين، إصدار الفواتير، تتبع المدفوعات، وإنشاء التقارير.</p>
+                    </div>
+
+                    <div class="about-features">
+                        <h3><i class="fas fa-star"></i> المميزات الرئيسية</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> إدارة قاعدة بيانات المشتركين</li>
+                            <li><i class="fas fa-check-circle"></i> إصدار الفواتير تلقائياً</li>
+                            <li><i class="fas fa-check-circle"></i> تتبع المدفوعات والمديونيات</li>
+                            <li><i class="fas fa-check-circle"></i> تقارير شهرية وتفصيلية</li>
+                            <li><i class="fas fa-check-circle"></i> تصدير واستيراد البيانات</li>
+                            <li><i class="fas fa-check-circle"></i> واجهة سهلة الاستخدام</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card developer-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-code"></i> المطور</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="developer-info">
+                            <div class="developer-logo">
+                                <img src="logo.png" alt="CyberPro Logo" style="width: 60px; height: 60px;">
+                            </div>
+                            <h2>سايبر برو للأعمال التقنية والهندسية</h2>
+                            <p class="developer-tagline">حلول تقنية متكاملة</p>
+
+                            <div class="contact-list">
+                                <a href="tel:773256961" class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>773256961</span>
+                                </a>
+                                <a href="https://cyberproteamco.com/" target="_blank" class="contact-item">
+                                    <i class="fas fa-globe"></i>
+                                    <span>cyberproteamco.com</span>
+                                </a>
+                                <a href="mailto:info@cyberproteamco.com" class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>info@cyberproteamco.com</span>
+                                </a>
+                            </div>
+
+                            <div class="social-links">
+                                <a href="https://cyberproteamco.com/" target="_blank" class="social-btn">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    زيارة الموقع
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card copyright-card">
+                    <p>جميع الحقوق محفوظة © 2026 - سايبر برو للأعمال التقنية والهندسية</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modals -->
+    <!-- Add Subscriber Modal -->
+    <div class="modal-overlay" id="add-subscriber-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-user-plus"></i> إضافة مشترك جديد</h3>
+                <button class="close-btn" onclick="closeModal('add-subscriber-modal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="add-subscriber-form">
+                    <div class="form-group">
+                        <label><i class="fas fa-user"></i> اسم المشترك *</label>
+                        <input type="text" id="new-subscriber-name" required placeholder="أدخل اسم المشترك">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-tachometer-alt"></i> رقم العداد</label>
+                            <input type="text" id="new-subscriber-meter" placeholder="مثال: M-001">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-phone"></i> رقم الهاتف</label>
+                            <input type="text" id="new-subscriber-phone" placeholder="مثال: 773123456">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-map-marker-alt"></i> العنوان</label>
+                        <input type="text" id="new-subscriber-address" placeholder="أدخل العنوان">
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-calendar"></i> تاريخ الاشتراك</label>
+                        <input type="date" id="new-subscriber-date">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-coins"></i> الرصيد الافتتاحي</label>
+                            <input type="number" id="new-subscriber-balance" value="0" step="0.01" placeholder="0">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-bolt"></i> القراءة الافتتاحية</label>
+                            <input type="number" id="new-subscriber-reading" value="0" placeholder="0">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('add-subscriber-modal')">إلغاء</button>
+                <button class="btn btn-primary" onclick="addSubscriber()">
+                    <i class="fas fa-save"></i> حفظ
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Subscriber Modal -->
+    <div class="modal-overlay" id="edit-subscriber-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-user-edit"></i> تعديل بيانات المشترك</h3>
+                <button class="close-btn" onclick="closeModal('edit-subscriber-modal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="edit-subscriber-form">
+                    <input type="hidden" id="edit-subscriber-id">
+                    <div class="form-group">
+                        <label><i class="fas fa-user"></i> اسم المشترك *</label>
+                        <input type="text" id="edit-subscriber-name" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-tachometer-alt"></i> رقم العداد</label>
+                            <input type="text" id="edit-subscriber-meter">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-phone"></i> رقم الهاتف</label>
+                            <input type="text" id="edit-subscriber-phone">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-map-marker-alt"></i> العنوان</label>
+                        <input type="text" id="edit-subscriber-address">
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-calendar"></i> تاريخ الاشتراك</label>
+                        <input type="date" id="edit-subscriber-date">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-coins"></i> الرصيد الافتتاحي</label>
+                            <input type="number" id="edit-subscriber-opening-balance" step="0.01">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-bolt"></i> القراءة الافتتاحية</label>
+                            <input type="number" id="edit-subscriber-opening-reading">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-wallet"></i> الرصيد الحالي (للقراءة فقط)</label>
+                        <input type="number" id="edit-subscriber-current-balance" readonly class="readonly-input">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('edit-subscriber-modal')">إلغاء</button>
+                <button class="btn btn-primary" onclick="updateSubscriber()">
+                    <i class="fas fa-save"></i> تحديث
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Subscriber Details Modal -->
+    <div class="modal-overlay" id="subscriber-details-modal">
+        <div class="modal modal-lg">
+            <div class="modal-header">
+                <h3><i class="fas fa-user"></i> تفاصيل المشترك</h3>
+                <button class="close-btn" onclick="closeModal('subscriber-details-modal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="subscriber-details-content">
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('subscriber-details-modal')">إغلاق</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Invoice Modal -->
+    <div class="modal-overlay" id="invoice-modal">
+        <div class="modal modal-lg">
+            <div class="modal-header">
+                <h3><i class="fas fa-file-invoice"></i> الفاتورة</h3>
+                <button class="close-btn" onclick="closeModal('invoice-modal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="invoice-content" class="invoice-print"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('invoice-modal')">إغلاق</button>
+                <button class="btn btn-primary" onclick="printInvoice()">
+                    <i class="fas fa-print"></i> طباعة
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toast-message">تم الحفظ بنجاح</span>
+    </div>
+
+    <!-- JavaScript Modules -->
+    <script src="js/data-store.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/modals.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/subscribers.js"></script>
+    <script src="js/billing.js"></script>
+    <script src="js/archive.js"></script>
+    <script src="js/reports.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

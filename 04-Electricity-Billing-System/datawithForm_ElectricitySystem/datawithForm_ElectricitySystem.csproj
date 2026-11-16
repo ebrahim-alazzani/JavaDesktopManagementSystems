@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{99E28A02-E2CE-4063-A067-F5F3ABB9197F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>datawithForm_ElectricitySystem</RootNamespace>
+    <AssemblyName>datawithForm_ElectricitySystem</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Meter.cs" />
+    <Compile Include="Models\BillingPeriod.cs" />
+    <Compile Include="Models\Tariff.cs" />
+    <Compile Include="Models\MeterReading.cs" />
+    <Compile Include="Models\Invoice.cs" />
+    <Compile Include="Models\Payment.cs" />
+    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\JournalEntry.cs" />
+    <Compile Include="Models\FixedAsset.cs" />
+    <Compile Include="Models\FuelConsumption.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="DAL\ConnectionHelper.cs" />
+    <Compile Include="DAL\CustomerDAL.cs" />
+    <Compile Include="DAL\MeterDAL.cs" />
+    <Compile Include="DAL\BillingPeriodDAL.cs" />
+    <Compile Include="DAL\TariffDAL.cs" />
+    <Compile Include="DAL\InvoiceDAL.cs" />
+    <Compile Include="DAL\PaymentDAL.cs" />
+    <Compile Include="DAL\AccountDAL.cs" />
+    <Compile Include="DAL\JournalEntryDAL.cs" />
+    <Compile Include="DAL\FixedAssetDAL.cs" />
+    <Compile Include="DAL\FuelConsumptionDAL.cs" />
+    <Compile Include="DAL\MeterReadingDAL.cs" />
+    <Compile Include="DAL\UserDAL.cs" />
+    <Compile Include="BLL\InvoiceBLL.cs" />
+    <Compile Include="BLL\PaymentBLL.cs" />
+    <Compile Include="BLL\JournalEntryBLL.cs" />
+    <Compile Include="Helpers\UIHelper.cs" />
+    <Compile Include="Forms\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMainDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMainDashboard.Designer.cs">
+      <DependentUpon>FrmMainDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCustomers.Designer.cs">
+      <DependentUpon>FrmCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmInvoices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmInvoices.Designer.cs">
+      <DependentUpon>FrmInvoices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmPayments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmPayments.Designer.cs">
+      <DependentUpon>FrmPayments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMeters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMeters.Designer.cs">
+      <DependentUpon>FrmMeters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmBillingPeriods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmBillingPeriods.Designer.cs">
+      <DependentUpon>FrmBillingPeriods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmTariffs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmTariffs.Designer.cs">
+      <DependentUpon>FrmTariffs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmAccounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAccounts.Designer.cs">
+      <DependentUpon>FrmAccounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmJournalEntries.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmJournalEntries.Designer.cs">
+      <DependentUpon>FrmJournalEntries.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmFixedAssets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmFixedAssets.Designer.cs">
+      <DependentUpon>FrmFixedAssets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmFuelConsumption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmFuelConsumption.Designer.cs">
+      <DependentUpon>FrmFuelConsumption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmReports.Designer.cs">
+      <DependentUpon>FrmReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmVouchers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmVouchers.Designer.cs">
+      <DependentUpon>FrmVouchers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmUsers.Designer.cs">
+      <DependentUpon>FrmUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\FrmCustomers.resx">
+      <DependentUpon>FrmCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMainDashboard.resx">
+      <DependentUpon>FrmMainDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="SQL\CreateDatabase.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

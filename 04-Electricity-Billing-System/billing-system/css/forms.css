@@ -1,0 +1,119 @@
+/* ===================================
+   Forms Styles
+   =================================== */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.form-group label i {
+    color: var(--primary);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.form-group input::placeholder {
+    color: var(--text-muted);
+}
+
+.readonly-input {
+    background: var(--bg-hover) !important;
+    cursor: not-allowed;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-row-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.filter-group {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.filter-group input {
+    padding: 10px 16px;
+    background: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-family: inherit;
+    min-width: 200px;
+}
+
+/* Data Tables */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+    padding: 14px 16px;
+    text-align: right;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.data-table th {
+    background: var(--bg-dark);
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.data-table tbody tr {
+    transition: var(--transition);
+}
+
+.data-table tbody tr:hover {
+    background: var(--bg-hover);
+}
+
+.data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Table responsive wrapper */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}

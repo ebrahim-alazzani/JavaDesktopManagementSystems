@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - نظام إدارة فواتير المشتركين</title>
+    <meta name="description" content="نظام إدارة فواتير المشتركين - تطوير سايبر برو للأعمال التقنية والهندسية">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <!-- Background Decorations -->
+    <div class="bg-decoration blue"></div>
+    <div class="bg-decoration orange"></div>
+
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <div class="login-logo">
+                    <img src="logo.png" alt="CyberPro Logo">
+                </div>
+                <h1>نظام إدارة فواتير المشتركين</h1>
+                <p>قم بتسجيل الدخول للمتابعة</p>
+            </div>
+
+            <div class="error-message" id="error-message">
+                <i class="fas fa-exclamation-circle"></i>
+                <span id="error-text">اسم المستخدم أو كلمة المرور غير صحيحة</span>
+            </div>
+
+            <form id="login-form" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label><i class="fas fa-user"></i> اسم المستخدم</label>
+                    <input type="text" id="username" placeholder="أدخل اسم المستخدم" required autocomplete="username">
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-lock"></i> كلمة المرور</label>
+                    <input type="password" id="password" placeholder="أدخل كلمة المرور" required
+                        autocomplete="current-password">
+                </div>
+
+                <div class="remember-row">
+                    <label class="remember-me">
+                        <input type="checkbox" id="remember-me">
+                        <span>تذكرني</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="login-btn" id="login-btn">
+                    <i class="fas fa-sign-in-alt"></i>
+                    تسجيل الدخول
+                </button>
+            </form>
+
+            <div class="divider">
+                <span>تطوير</span>
+            </div>
+
+            <div class="developer-info">
+                <p>سايبر برو للأعمال التقنية والهندسية</p>
+                <a href="https://cyberproteamco.com/" target="_blank">cyberproteamco.com</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,217 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{99E28A02-E2CE-4063-A067-F5F3ABB9197F}|datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem.csproj|d:\\programming\\project student\\new\\datawithform_electricitysystem\\datawithform_electricitysystem\\forms\\frmmaindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{99E28A02-E2CE-4063-A067-F5F3ABB9197F}|datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem.csproj|solutionrelative:datawithform_electricitysystem\\forms\\frmmaindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99E28A02-E2CE-4063-A067-F5F3ABB9197F}|datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem.csproj|D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithform_electricitysystem\\forms\\frmreports.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{99E28A02-E2CE-4063-A067-F5F3ABB9197F}|datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem.csproj|solutionrelative:datawithform_electricitysystem\\forms\\frmreports.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99E28A02-E2CE-4063-A067-F5F3ABB9197F}|datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem.csproj|D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithform_electricitysystem\\forms\\frmtariffs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{99E28A02-E2CE-4063-A067-F5F3ABB9197F}|datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem.csproj|solutionrelative:datawithform_electricitysystem\\forms\\frmtariffs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99E28A02-E2CE-4063-A067-F5F3ABB9197F}|datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem.csproj|D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithform_electricitysystem\\forms\\frmpayments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{99E28A02-E2CE-4063-A067-F5F3ABB9197F}|datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem.csproj|solutionrelative:datawithform_electricitysystem\\forms\\frmpayments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99E28A02-E2CE-4063-A067-F5F3ABB9197F}|datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem.csproj|D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithform_electricitysystem\\forms\\frmmeters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{99E28A02-E2CE-4063-A067-F5F3ABB9197F}|datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem.csproj|solutionrelative:datawithform_electricitysystem\\forms\\frmmeters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99E28A02-E2CE-4063-A067-F5F3ABB9197F}|datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem.csproj|D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithform_electricitysystem\\forms\\frmbillingperiods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{99E28A02-E2CE-4063-A067-F5F3ABB9197F}|datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem.csproj|solutionrelative:datawithform_electricitysystem\\forms\\frmbillingperiods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99E28A02-E2CE-4063-A067-F5F3ABB9197F}|datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem.csproj|D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithform_electricitysystem\\forms\\frmaccounts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{99E28A02-E2CE-4063-A067-F5F3ABB9197F}|datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem.csproj|solutionrelative:datawithform_electricitysystem\\forms\\frmaccounts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99E28A02-E2CE-4063-A067-F5F3ABB9197F}|datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem.csproj|D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithform_electricitysystem\\forms\\frmjournalentries.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{99E28A02-E2CE-4063-A067-F5F3ABB9197F}|datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem.csproj|solutionrelative:datawithform_electricitysystem\\forms\\frmjournalentries.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99E28A02-E2CE-4063-A067-F5F3ABB9197F}|datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem.csproj|D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithform_electricitysystem\\forms\\frmfuelconsumption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{99E28A02-E2CE-4063-A067-F5F3ABB9197F}|datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem.csproj|solutionrelative:datawithform_electricitysystem\\forms\\frmfuelconsumption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99E28A02-E2CE-4063-A067-F5F3ABB9197F}|datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem.csproj|D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithform_electricitysystem\\forms\\frmfixedassets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{99E28A02-E2CE-4063-A067-F5F3ABB9197F}|datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem.csproj|solutionrelative:datawithform_electricitysystem\\forms\\frmfixedassets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99E28A02-E2CE-4063-A067-F5F3ABB9197F}|datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem.csproj|D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithform_electricitysystem\\forms\\frminvoices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{99E28A02-E2CE-4063-A067-F5F3ABB9197F}|datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem.csproj|solutionrelative:datawithform_electricitysystem\\forms\\frminvoices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99E28A02-E2CE-4063-A067-F5F3ABB9197F}|datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem.csproj|D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithform_electricitysystem\\forms\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{99E28A02-E2CE-4063-A067-F5F3ABB9197F}|datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem.csproj|solutionrelative:datawithform_electricitysystem\\forms\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{7ff64d0d-f313-4057-90a1-1b0811032478}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FrmReports.cs [Design]",
+              "DocumentMoniker": "D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem\\Forms\\FrmReports.cs",
+              "RelativeDocumentMoniker": "datawithForm_ElectricitySystem\\Forms\\FrmReports.cs",
+              "ToolTip": "D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem\\Forms\\FrmReports.cs [Design]",
+              "RelativeToolTip": "datawithForm_ElectricitySystem\\Forms\\FrmReports.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-08T00:38:19.714Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FrmTariffs.cs [Design]",
+              "DocumentMoniker": "D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem\\Forms\\FrmTariffs.cs",
+              "RelativeDocumentMoniker": "datawithForm_ElectricitySystem\\Forms\\FrmTariffs.cs",
+              "ToolTip": "D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem\\Forms\\FrmTariffs.cs [Design]",
+              "RelativeToolTip": "datawithForm_ElectricitySystem\\Forms\\FrmTariffs.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-08T00:38:18.741Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FrmPayments.cs [Design]",
+              "DocumentMoniker": "D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem\\Forms\\FrmPayments.cs",
+              "RelativeDocumentMoniker": "datawithForm_ElectricitySystem\\Forms\\FrmPayments.cs",
+              "ToolTip": "D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem\\Forms\\FrmPayments.cs [Design]",
+              "RelativeToolTip": "datawithForm_ElectricitySystem\\Forms\\FrmPayments.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-08T00:38:17.615Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FrmMeters.cs [Design]",
+              "DocumentMoniker": "D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem\\Forms\\FrmMeters.cs",
+              "RelativeDocumentMoniker": "datawithForm_ElectricitySystem\\Forms\\FrmMeters.cs",
+              "ToolTip": "D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem\\Forms\\FrmMeters.cs [Design]",
+              "RelativeToolTip": "datawithForm_ElectricitySystem\\Forms\\FrmMeters.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-08T00:38:16.537Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FrmMainDashboard.cs [Design]",
+              "DocumentMoniker": "D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem\\Forms\\FrmMainDashboard.cs",
+              "RelativeDocumentMoniker": "datawithForm_ElectricitySystem\\Forms\\FrmMainDashboard.cs",
+              "ToolTip": "D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem\\Forms\\FrmMainDashboard.cs [Design]*",
+              "RelativeToolTip": "datawithForm_ElectricitySystem\\Forms\\FrmMainDashboard.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-08T00:38:14.523Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FrmBillingPeriods.cs [Design]",
+              "DocumentMoniker": "D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem\\Forms\\FrmBillingPeriods.cs",
+              "RelativeDocumentMoniker": "datawithForm_ElectricitySystem\\Forms\\FrmBillingPeriods.cs",
+              "ToolTip": "D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem\\Forms\\FrmBillingPeriods.cs [Design]",
+              "RelativeToolTip": "datawithForm_ElectricitySystem\\Forms\\FrmBillingPeriods.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-08T00:38:11.864Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FrmAccounts.cs [Design]",
+              "DocumentMoniker": "D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem\\Forms\\FrmAccounts.cs",
+              "RelativeDocumentMoniker": "datawithForm_ElectricitySystem\\Forms\\FrmAccounts.cs",
+              "ToolTip": "D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem\\Forms\\FrmAccounts.cs [Design]",
+              "RelativeToolTip": "datawithForm_ElectricitySystem\\Forms\\FrmAccounts.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-08T00:38:11.121Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FrmJournalEntries.cs [Design]",
+              "DocumentMoniker": "D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem\\Forms\\FrmJournalEntries.cs",
+              "RelativeDocumentMoniker": "datawithForm_ElectricitySystem\\Forms\\FrmJournalEntries.cs",
+              "ToolTip": "D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem\\Forms\\FrmJournalEntries.cs [Design]",
+              "RelativeToolTip": "datawithForm_ElectricitySystem\\Forms\\FrmJournalEntries.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-08T00:38:08.563Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FrmFuelConsumption.cs [Design]",
+              "DocumentMoniker": "D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem\\Forms\\FrmFuelConsumption.cs",
+              "RelativeDocumentMoniker": "datawithForm_ElectricitySystem\\Forms\\FrmFuelConsumption.cs",
+              "ToolTip": "D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem\\Forms\\FrmFuelConsumption.cs [Design]",
+              "RelativeToolTip": "datawithForm_ElectricitySystem\\Forms\\FrmFuelConsumption.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-08T00:33:04.376Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FrmFixedAssets.cs [Design]",
+              "DocumentMoniker": "D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem\\Forms\\FrmFixedAssets.cs",
+              "RelativeDocumentMoniker": "datawithForm_ElectricitySystem\\Forms\\FrmFixedAssets.cs",
+              "ToolTip": "D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem\\Forms\\FrmFixedAssets.cs [Design]",
+              "RelativeToolTip": "datawithForm_ElectricitySystem\\Forms\\FrmFixedAssets.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-08T00:33:03.352Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FrmInvoices.cs [Design]",
+              "DocumentMoniker": "D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem\\Forms\\FrmInvoices.cs",
+              "RelativeDocumentMoniker": "datawithForm_ElectricitySystem\\Forms\\FrmInvoices.cs",
+              "ToolTip": "D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem\\Forms\\FrmInvoices.cs [Design]",
+              "RelativeToolTip": "datawithForm_ElectricitySystem\\Forms\\FrmInvoices.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-08T00:33:01.584Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "FrmLogin.cs [Design]",
+              "DocumentMoniker": "D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem\\Forms\\FrmLogin.cs",
+              "RelativeDocumentMoniker": "datawithForm_ElectricitySystem\\Forms\\FrmLogin.cs",
+              "ToolTip": "D:\\Programming\\project student\\new\\datawithForm_ElectricitySystem\\datawithForm_ElectricitySystem\\Forms\\FrmLogin.cs [Design]",
+              "RelativeToolTip": "datawithForm_ElectricitySystem\\Forms\\FrmLogin.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-08T00:32:59.731Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
