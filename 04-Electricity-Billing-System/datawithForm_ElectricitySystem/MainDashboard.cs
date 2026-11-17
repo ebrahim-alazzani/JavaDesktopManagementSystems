@@ -189,7 +189,7 @@ namespace datawithForm_ElectricitySystem
 {
     string info = "نظام محاسبي لمحطة الكهرباء\n" +
                   "الإصدار: 1.0.0\n" +
-                  "تطوير: [افنان ,بلقيس ,تسنيم ]\n" +
+                  "تطوير: سايبر برو للأعمال التقنية والهندسية\n" +
                   "حقوق النشر © 2026 جميع الحقوق محفوظة.";
 
     MessageBox.Show(info, "حول النظام", MessageBoxButtons.OK, MessageBoxIcon.Information);

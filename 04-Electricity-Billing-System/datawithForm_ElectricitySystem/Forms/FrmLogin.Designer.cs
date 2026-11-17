@@ -115,11 +115,11 @@ namespace datawithForm_ElectricitySystem
             this.lblVersion.AutoSize = true;
             this.lblVersion.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.lblVersion.ForeColor = System.Drawing.Color.FromArgb(148, 163, 184);
-            this.lblVersion.Location = new System.Drawing.Point(110, 335);
+            this.lblVersion.Location = new System.Drawing.Point(80, 335);
             this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(212, 13);
+            this.lblVersion.Size = new System.Drawing.Size(260, 15);
             this.lblVersion.TabIndex = 7;
-            this.lblVersion.Text = "الإصدار 1.0.0 - تطوير: طالبات كلية المجتمع";
+            this.lblVersion.Text = "الإصدار 1.0.0 - تطوير: سايبر برو";
             // 
             // FrmLogin
             // 
@@ -144,7 +144,7 @@ namespace datawithForm_ElectricitySystem
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "تسجيل الدخول - نظام الكهرباء";
+            this.Text = "تسجيل الدخول - نظام الكهرباء - تطوير سايبر برو";
             this.ResumeLayout(false);
             this.PerformLayout();
         }

@@ -375,13 +375,13 @@
             // lblLogo
             // 
             this.lblLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblLogo.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
+            this.lblLogo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.lblLogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(130)))), ((int)(((byte)(246)))));
             this.lblLogo.Location = new System.Drawing.Point(5, 5);
             this.lblLogo.Name = "lblLogo";
             this.lblLogo.Size = new System.Drawing.Size(210, 50);
             this.lblLogo.TabIndex = 0;
-            this.lblLogo.Text = "⚡ نظام الكهرباء";
+            this.lblLogo.Text = "⚡ نظام الكهرباء\nتطوير سايبر برو";
             this.lblLogo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlContent
@@ -631,7 +631,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "نظام إدارة الكهرباء - لوحة التحكم";
+            this.Text = "نظام إدارة الكهرباء - تطوير سايبر برو";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnlSidebar.ResumeLayout(false);
             this.pnlMenuContainer.ResumeLayout(false);
